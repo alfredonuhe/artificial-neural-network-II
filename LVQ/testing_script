@@ -28,10 +28,10 @@ do
     for j in {1..3}
     do
     echo -e "${GREEN}Set of commmands $i-$j-$1:\n${NC}"
-    echo `../lvq_pak-3.1/eveninit -din Train$j.txt -cout diabetes$i-$j-$1.cod -noc $n`
-    echo `../lvq_pak-3.1/mindist -cin diabetes$i-$j-$1.cod > dist$i-$j-$1.txt`
-    echo `../lvq_pak-3.1/olvq1 -din Train$j.txt -cin diabetes$i-$j-$1.cod -cout diabetes$i-$j-$1.exit -rlen $1`
-    echo `../lvq_pak-3.1/accuracy -din Test$j.txt -cin diabetes$i-$j-$1.exit > accuracy$i-$j-$1.txt`
+    echo `./lvq_pak-3.1/eveninit -din Train$j.txt -cout diabetes$i-$j-$1.cod -noc $n`
+    echo `./lvq_pak-3.1/mindist -cin diabetes$i-$j-$1.cod > dist$i-$j-$1.txt`
+    echo `./lvq_pak-3.1/olvq1 -din Train$j.txt -cin diabetes$i-$j-$1.cod -cout diabetes$i-$j-$1.exit -rlen $1`
+    echo `./lvq_pak-3.1/accuracy -din Test$j.txt -cin diabetes$i-$j-$1.exit > accuracy$i-$j-$1.txt`
     #almacena pruebas
     echo `mv -t ./LVQ-Pruebas-$1/Prueba$i-$1 diabetes$i-$j-$1.cod diabetes$i-$j-$1.exit dist$i-$j-$1.txt accuracy$i-$j-$1.txt`
     done
