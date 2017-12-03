@@ -1,1 +1,1 @@
-# neural_networks_p2
+# neural-networks-p2
