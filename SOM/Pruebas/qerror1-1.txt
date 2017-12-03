@@ -1,0 +1,1 @@
+Quantization error of Train1.txt with map Pruebas/diabetes1-1.cod is 0.312848 per sample (564 samples)

@@ -1,0 +1,17 @@
+./som_pak-3.1/randinit -din Train1.txt -cout Pruebas/diabetes1-1.cod -xdim 10 -ydim 10 -topol hexa -neigh bubble
+
+./som_pak-3.1/vsom -din Train1.txt -cin Pruebas/diabetes1-1.cod -cout Pruebas/diabetes1-1.cod -rlen 1000 -alpha 0.05 -radius 10
+
+./som_pak-3.1/vsom -din Train1.txt -cin Pruebas/diabetes1-1.cod -cout Pruebas/diabetes1-1.cod -rlen 10000 -alpha 0.02 -radius 3
+
+./som_pak-3.1/qerror -din Train1.txt -cin Pruebas/diabetes1-1.cod > Pruebas/qerror1-1.txt 
+
+./som_pak-3.1/vcal -din Train1.txt -cin Pruebas/diabetes1-1.cod -cout Pruebas/diabetesCal1-1.cod
+
+./som_pak-3.1/visual -din Test1.txt -cin Pruebas/diabetes1-1.cod -dout Pruebas/diabVisual1-1.txt  
+
+./som_pak-3.1/visual -din Test1.txt -cin Pruebas/diabetesCal1-1.cod -dout Pruebas/diabVisual1-1.txt 
+
+./som_pak-3.1/sammon -cin Pruebas/diabetes1-1.cod -cout Pruebas/diabetes1-1.sam -rlen 100 -ps
+
+./som_pak-3.1/umat -cin Pruebas/diabetes1-1.cod > Pruebas/diab1-1.ps 
