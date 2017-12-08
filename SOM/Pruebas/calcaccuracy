@@ -1,0 +1,11 @@
+sed -n "2,$ p" ../Fold2/diabVisual-2.txt | grep -oE [a-z]+ >temp_v
+sed -n "3,$ p" ../../../Test2.txt | grep -oE [a-z]+ >temp_t
+errors=$(awk 'FNR==NR{a[NR]=$0;next;} $0!=a[FNR]' temp_t temp_v| wc -l)
+total=$(wc -l <temp_v)
+echo errors: $errors total: $total
+#declare -d accuracy
+#accuracy=$((($total - $errors) / $total))
+#echo "accuracy = $accuracy"
+
+accuracy=$(echo "scale=6;matches=$total-$errors;$matches/$total"|bc)
+echo  $accuracy
