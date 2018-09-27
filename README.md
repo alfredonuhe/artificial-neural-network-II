@@ -1,4 +1,4 @@
-# artificial-neural-network-I
+# artificial-neural-network-II
 This repository contains three different codes:
 
   - Testing code for a ANN Learning Vector Quantization. [Link](LVQ)
